@@ -23,6 +23,13 @@ cc -o fontpic gpl/fontpic.c
 ./fontpic < vt-default-normal.hex > vt-default-normal.bmp
 ```
 
+To load a font file into vt(4):
+(setfont is included in vidcontrol. See [this commit](https://cgit.freebsd.org/src/commit/?id=44581368a4aabc5a442e2a9c5333828a3b69d69d))
+```sh
+vtfontcvt -o vt-default-normal.bin vt-default-normal.hex
+vidcontrol -f vt-default-normal.bin
+```
+
 Links
 =====
 * http://czyborra.com/unifont/ (Original GNU Unifont home)
